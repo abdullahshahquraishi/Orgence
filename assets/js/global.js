@@ -6,6 +6,7 @@
  *   - Scroll-triggered element reveals
  *   - Active nav link tracking
  *   - Header brand alternating fade
+ *   - Mobile navigation hamburger toggle
  *
  * Load this file at the END of <body>, after all components
  * have been injected, so all DOM elements are present.
@@ -69,6 +70,44 @@
             brandLong.style.opacity  = showingLong ? '1' : '0';
             brandShort.style.opacity = showingLong ? '0' : '1';
         }, 10000);
+    }
+
+    /* ── Mobile navigation toggle ─────────────────────────── */
+    const navToggle = document.getElementById('nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    const navClose  = document.getElementById('nav-close');
+
+    if (navToggle && mobileNav) {
+
+        const openMenu = () => {
+            mobileNav.classList.add('open');
+            mobileNav.setAttribute('aria-hidden', 'false');
+            navToggle.setAttribute('aria-expanded', 'true');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeMenu = () => {
+            mobileNav.classList.remove('open');
+            mobileNav.setAttribute('aria-hidden', 'true');
+            navToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        };
+
+        navToggle.addEventListener('click', openMenu);
+
+        if (navClose) {
+            navClose.addEventListener('click', closeMenu);
+        }
+
+        /* Close when any link inside the overlay is tapped */
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        /* Close if overlay itself is somehow resized to desktop */
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) closeMenu();
+        }, { passive: true });
     }
 
 })();
