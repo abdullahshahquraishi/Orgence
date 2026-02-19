@@ -25,8 +25,11 @@ jobs:
           REMOTE_HOST:     ${{ secrets.REMOTE_HOST }}
           REMOTE_USER:     ${{ secrets.REMOTE_USER }}
           TARGET:          ${{ secrets.REMOTE_PATH }}
-          # Don't delete files on the server that aren't in the repo
-          # (e.g. uploaded media). Remove the next line to enable
-          # full mirror mode (deletes extra remote files).
-          ARGS: "-rlzv --exclude='.git*' --exclude='.github' --exclude='README*'"
+          # SOURCE defaults to repo root with trailing slash — contents are
+          # synced flat into TARGET with no subdirectory created.
+          SOURCE: "./"
+          # --delete mirrors the repo exactly: files removed from git are
+          # removed from the server. Safe because excluded paths are never
+          # deleted even with --delete.
+          ARGS: "-rlzv --delete --exclude='.git*' --exclude='.github' --exclude='README*'"
 
