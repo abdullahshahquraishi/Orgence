@@ -104,10 +104,6 @@
             link.addEventListener('click', closeMenu);
         });
 
-        /* Close if overlay itself is somehow resized to desktop */
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768) closeMenu();
-        }, { passive: true });
     }
 
 })();

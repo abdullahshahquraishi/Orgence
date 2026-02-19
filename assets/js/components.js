@@ -11,134 +11,119 @@
  *
  *   2. Do the same for the footer with 'footer-mount'.
  *
- *   3. To add a nav link, edit the `navLinks` array below.
+ *   3. To add a nav link in the overlay, edit the nav block inside header().
  */
 
 const OrgenceComponents = (() => {
-
-    /* ── Navigation links ──────────────────────────────────
-       href values are relative to the homepage (index.html).
-       Off-page links are automatically prefixed with 'index.html'.
-    ───────────────────────────────────────────────────────── */
-    const navLinks = [
-        { label: 'The Challenge', anchor: '#problem'    },
-        { label: 'Methodology',   anchor: '#process'    },
-        { label: 'Diagnostic',    anchor: '#diagnostic' },
-    ];
-
-    function buildNav(page) {
-        const prefix = page === 'home' ? '' : 'index.html';
-        return navLinks.map(({ label, anchor }) =>
-            `<a class="nav-link hover:text-forest-green transition-colors duration-300"
-                href="${prefix}${anchor}">${label}</a>`
-        ).join('\n        ');
-    }
-
-    /* Mobile nav links — large, italic, displayed in the overlay */
-    function buildMobileNav(page) {
-        const prefix = page === 'home' ? '' : 'index.html';
-        return navLinks.map(({ label, anchor }) =>
-            `<a class="mobile-nav-link" href="${prefix}${anchor}">${label}</a>`
-        ).join('\n        ');
-    }
-
-    function buildBrand() {
-        return `<div id="header-brand-origin">
-                <span id="header-brand-long">Organisational Intelligence</span>
-                <span id="header-brand-short">Orgence AI</span>
-            </div>`;
-    }
-
-    /* Desktop CTA — hidden below md breakpoint */
-    function buildCTA(page) {
-        if (page === 'home') {
-            return `<a href="briefing.html"
-                class="hidden md:flex border border-forest-green/20 hover:border-forest-green
-                       text-forest-green text-[10px] tracking-[0.2em] uppercase
-                       py-3 px-8 transition-all duration-300">
-                Inquire
-            </a>`;
-        }
-        return `<a href="index.html"
-            class="hidden md:flex items-center gap-2 border border-forest-green/20
-                   hover:border-forest-green text-forest-green text-[10px]
-                   tracking-[0.2em] uppercase py-3 px-8 transition-all duration-300">
-            <span class="material-symbols-outlined text-sm">arrow_back</span>
-            Back
-        </a>`;
-    }
-
-    /* Mobile CTA — shown inside the full-screen overlay */
-    function buildMobileCTA(page) {
-        if (page === 'home') {
-            return `<a href="briefing.html"
-                class="block text-center border border-white/20 hover:border-white/60
-                       text-earth-primary text-[10px] tracking-[0.2em] uppercase font-bold
-                       py-4 transition-all duration-300">
-                Request Briefing
-            </a>`;
-        }
-        return `<a href="index.html"
-            class="flex items-center justify-center gap-2 border border-white/20
-                   hover:border-white/60 text-earth-primary text-[10px] tracking-[0.2em]
-                   uppercase font-bold py-4 transition-all duration-300">
-            <span class="material-symbols-outlined text-sm">arrow_back</span>
-            Back to Home
-        </a>`;
-    }
 
     /* ── Public API ────────────────────────────────────────── */
     return {
 
         /**
          * Render the site header.
-         * @param {string} page - 'home' | any other page slug
+         * Outputs a floating nav pill (top-left) + a full-page overlay.
+         * @param {string} page - page slug (kept for API compatibility)
          */
         header(page = 'home') {
             return `
 <div id="scroll-progress"></div>
-<header id="site-header" class="w-full py-6 lg:py-8 px-8 lg:px-16 flex justify-between items-center sticky top-0 z-50 bg-earth-primary/80 backdrop-blur-md">
-    <a href="index.html" class="flex items-center gap-3 shrink-0">
-        <span class="material-symbols-outlined text-forest-green text-2xl">token</span>
-        ${buildBrand()}
-    </a>
-    <nav class="hidden md:flex gap-12 text-[10px] font-bold tracking-[0.2em] uppercase text-text-muted">
-        ${buildNav(page)}
-    </nav>
-    <div class="flex items-center gap-4">
-        ${buildCTA(page)}
-        <!-- Hamburger: visible only below md breakpoint -->
-        <button id="nav-toggle"
-                class="md:hidden flex flex-col justify-center gap-[5px] p-2 -mr-2"
-                aria-label="Open navigation"
-                aria-expanded="false">
-            <span class="hamburger-bar"></span>
-            <span class="hamburger-bar"></span>
-            <span class="hamburger-bar"></span>
-        </button>
-    </div>
-</header>
 
-<!-- ── Mobile navigation overlay ──────────────────────── -->
+<!-- ── Floating nav pill ──────────────────────────────────── -->
+<div id="nav-pill">
+    <button id="nav-toggle"
+            class="flex flex-col justify-center gap-[5px] p-1.5"
+            aria-label="Open navigation"
+            aria-expanded="false">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+    </button>
+    <a href="index.html" id="nav-pill-brand" aria-label="Orgence AI home">
+        <span class="material-symbols-outlined nav-pill-icon">token</span>
+        <span class="nav-pill-wordmark">Orgence AI</span>
+    </a>
+</div>
+
+<!-- ── Full-page navigation overlay ──────────────────────── -->
 <div id="mobile-nav" aria-hidden="true">
+
     <!-- Top bar -->
-    <div class="flex justify-between items-center py-6 px-8 border-b border-white/10">
+    <div class="flex justify-between items-center py-6 px-8 lg:px-16 border-b border-white/10 shrink-0">
         <a href="index.html" class="flex items-center gap-3">
             <span class="material-symbols-outlined text-earth-primary text-2xl">token</span>
             <span class="font-serif text-earth-primary uppercase tracking-[0.05em]">Orgence AI</span>
         </a>
-        <button id="nav-close" class="p-2 -mr-2" aria-label="Close navigation">
+        <button id="nav-close" class="flex items-center justify-center p-2 -mr-2"
+                aria-label="Close navigation">
             <span class="material-symbols-outlined text-earth-primary text-2xl">close</span>
         </button>
     </div>
-    <!-- Nav links -->
-    <nav class="flex flex-col px-8 mt-10 flex-1 overflow-y-auto">
-        ${buildMobileNav(page)}
-    </nav>
-    <!-- CTA -->
-    <div class="px-8 pb-10">
-        ${buildMobileCTA(page)}
+
+    <!-- Body: context + links -->
+    <div class="flex flex-col lg:flex-row flex-1 min-h-0">
+
+        <!-- Left context panel (desktop only) -->
+        <div class="hidden lg:flex flex-col justify-between px-16 py-16
+                    border-r border-white/10 shrink-0" style="width:38%">
+            <div>
+                <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-white/25 mb-10">
+                    Strategic Advisory
+                </p>
+                <p class="font-serif italic text-earth-primary/50 text-2xl leading-relaxed max-w-xs">
+                    Organisational intelligence before AI implementation.
+                </p>
+            </div>
+            <div>
+                <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-white/25 mb-5">
+                    Contact
+                </p>
+                <a href="mailto:hello@orgence.ai"
+                   class="block text-sm font-light text-earth-primary/50
+                          hover:text-earth-primary transition-colors duration-200 mb-3">
+                    hello@orgence.ai
+                </a>
+                <a href="#"
+                   class="block text-sm font-light text-earth-primary/50
+                          hover:text-earth-primary transition-colors duration-200">
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+
+        <!-- Right nav links -->
+        <nav class="flex flex-col px-8 lg:px-20 pt-10 lg:pt-14 flex-1 overflow-y-auto">
+
+            <div class="mb-8">
+                <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-white/25 mb-5">
+                    Pages
+                </p>
+                <a class="mobile-nav-link" href="index.html">Home</a>
+                <a class="mobile-nav-link" href="about.html">About</a>
+            </div>
+
+            <div class="pt-8 border-t border-white/10">
+                <p class="text-[10px] uppercase tracking-[0.3em] font-bold text-white/25 mb-5">
+                    The Service
+                </p>
+                <a class="mobile-nav-link" href="index.html#problem">The Challenge</a>
+                <a class="mobile-nav-link" href="index.html#process">Methodology</a>
+                <a class="mobile-nav-link" href="index.html#diagnostic">Diagnostic</a>
+            </div>
+
+        </nav>
     </div>
+
+    <!-- CTA strip -->
+    <div class="px-8 lg:px-16 pt-8 pb-10 border-t border-white/10 shrink-0">
+        <a href="briefing.html"
+           class="flex items-center justify-center gap-3 border border-white/20
+                  hover:border-white/60 text-earth-primary text-[10px] tracking-[0.2em]
+                  uppercase font-bold py-4 transition-all duration-300">
+            Request Briefing
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+    </div>
+
 </div>`;
         },
 
@@ -210,7 +195,7 @@ const OrgenceComponents = (() => {
                     Company
                 </h4>
                 <nav class="flex flex-col gap-4">
-                    <a class="footer-link" href="#">About</a>
+                    <a class="footer-link" href="about.html">About</a>
                     <a class="footer-link" href="#">Careers</a>
                     <a class="footer-link" href="#">Press</a>
                     <a class="footer-link" href="#">Partners</a>

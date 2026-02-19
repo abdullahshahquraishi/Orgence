@@ -42,13 +42,48 @@ html { scroll-behavior: smooth; }
     transition: width 0.08s linear;
 }
 
-/* ── Page-load: header slide-down ─────────────────────────── */
-#site-header {
-    animation: slideDown 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
+/* ── Page-load animation ───────────────────────────────────── */
 @keyframes slideDown {
     from { opacity: 0; transform: translateY(-24px); }
     to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Floating nav pill ─────────────────────────────────────── */
+#nav-pill {
+    position: fixed;
+    top: 1.25rem;
+    left: 1.25rem;
+    z-index: 80;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(242, 239, 237, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(27, 48, 34, 0.08);
+    border-radius: 100px;
+    padding: 0.5rem 1.125rem 0.5rem 0.75rem;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    animation: slideDown 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+#nav-pill-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+.nav-pill-icon {
+    font-size: 1.1rem !important;
+    color: #1B3022;
+}
+.nav-pill-wordmark {
+    font-family: "Libre Baskerville", serif;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #1B3022;
+    white-space: nowrap;
+    line-height: 1;
 }
 
 /* ── Hero animations ──────────────────────────────────────── */
@@ -121,43 +156,6 @@ html { scroll-behavior: smooth; }
     opacity: 1;
 }
 
-/* ── Header brand alternating text ───────────────────────── */
-#header-brand-origin {
-    position: relative;
-    height: 1.5rem;
-    min-width: 14rem;
-}
-#header-brand-long,
-#header-brand-short {
-    position: absolute;
-    bottom: 0; left: 0;
-    font-family: "Libre Baskerville", serif;
-    font-size: 1.1rem;
-    line-height: 1;
-    white-space: nowrap;
-    color: #1B3022;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    transition: opacity 0.8s ease;
-}
-#header-brand-long  { opacity: 0; }
-#header-brand-short { opacity: 1; }
-
-/* On mobile: hide the long text, show only "Orgence AI" statically */
-@media (max-width: 767px) {
-    #header-brand-long  { display: none; }
-    #header-brand-short {
-        font-size: 0.9rem;
-        /* static position so it flows in the container */
-        position: relative;
-        opacity: 1 !important;
-    }
-    #header-brand-origin {
-        min-width: 0;
-        height: auto;
-    }
-}
-
 /* ── Banner fade-in ───────────────────────────────────────── */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(12px); }
@@ -206,11 +204,6 @@ html { scroll-behavior: smooth; }
     opacity: 1;
     pointer-events: auto;
 }
-/* Always hide overlay on desktop regardless of JS state */
-@media (min-width: 768px) {
-    #mobile-nav { display: none !important; }
-}
-
 /* ── Mobile nav links ─────────────────────────────────────── */
 .mobile-nav-link {
     display: block;
