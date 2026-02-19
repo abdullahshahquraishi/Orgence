@@ -28,4 +28,5 @@ jobs:
           # Don't delete files on the server that aren't in the repo
           # (e.g. uploaded media). Remove the next line to enable
           # full mirror mode (deletes extra remote files).
-          ARGS: "-rlzv --exclude='.git*'"
+          ARGS: "-rlzv --exclude='.git*' --exclude='.github' --exclude='README*'"
+
