@@ -1,0 +1,31 @@
+name: Deploy to Production
+
+# ── Trigger ────────────────────────────────────────────────
+# Runs only when you push to main.
+# Work on any other branch freely — it won't deploy until
+# you merge/push to main.
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Sync files to server
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy via rsync over SSH
+        uses: easingthemes/ssh-deploy@v5
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          REMOTE_HOST:     ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER:     ${{ secrets.REMOTE_USER }}
+          TARGET:          ${{ secrets.REMOTE_PATH }}
+          # Don't delete files on the server that aren't in the repo
+          # (e.g. uploaded media). Remove the next line to enable
+          # full mirror mode (deletes extra remote files).
+          ARGS: "-rlzv --exclude='.git*'"
