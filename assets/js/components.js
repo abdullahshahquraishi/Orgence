@@ -147,47 +147,110 @@ const OrgenceComponents = (() => {
          */
         footer() {
             return `
-<footer class="py-20 bg-earth-secondary px-8 lg:px-16 border-t border-forest-green/5">
-    <div class="narrative-container">
-        <div class="flex flex-col md:flex-row justify-between items-start gap-20">
-            <div class="flex flex-col gap-8" data-reveal>
-                <a href="index.html" class="flex items-center gap-3">
-                    <span class="material-symbols-outlined text-forest-green">token</span>
-                    <span class="text-forest-green font-serif text-xl tracking-wide uppercase">Orgence AI</span>
+<footer class="bg-forest-green text-earth-primary px-8 lg:px-16 pt-20 pb-10">
+<div class="narrative-container">
+
+    <!-- ── CTA strip ──────────────────────────────────────── -->
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center
+                gap-8 pb-16 border-b border-white/10" data-reveal>
+        <p class="text-2xl md:text-3xl font-serif italic text-earth-primary/80 leading-snug max-w-lg">
+            Ready to get clarity on<br class="hidden md:block"/> your AI roadmap?
+        </p>
+        <a href="briefing.html"
+           class="shrink-0 border border-white/20 hover:border-white/60 hover:bg-white/5
+                  text-earth-primary text-[10px] tracking-[0.2em] uppercase font-bold
+                  py-4 px-10 transition-all duration-300 flex items-center gap-3">
+            Request Briefing
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </a>
+    </div>
+
+    <!-- ── Main grid: brand + link columns ────────────────── -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-16 py-16 border-b border-white/10">
+
+        <!-- Brand column -->
+        <div class="md:col-span-4" data-reveal>
+            <a href="index.html" class="flex items-center gap-3 mb-6">
+                <span class="material-symbols-outlined text-earth-primary text-xl">token</span>
+                <span class="font-serif text-earth-primary uppercase tracking-[0.05em] text-sm">Orgence AI</span>
+            </a>
+            <p class="text-earth-primary/50 font-light text-sm leading-relaxed max-w-xs mb-10">
+                Strategic advisory for e-commerce founders navigating the AI era.
+                We deliver clarity, not code.
+            </p>
+            <!-- Social -->
+            <div class="flex gap-6">
+                <a href="#"
+                   class="text-[10px] font-bold uppercase tracking-[0.2em] text-earth-primary/40
+                          hover:text-earth-primary transition-colors duration-300">
+                    LinkedIn
                 </a>
-                <p class="text-text-muted text-sm font-light max-w-xs leading-relaxed">
-                    Strategic advisory for the artificial intelligence era.
-                </p>
-            </div>
-            <div class="grid grid-cols-2 gap-16 lg:gap-32" data-reveal data-delay="1">
-                <div class="flex flex-col gap-6">
-                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-text-muted">Company</h4>
-                    <nav class="flex flex-col gap-4 text-sm font-light text-text-muted">
-                        <a class="hover:text-forest-green transition-colors" href="#">About</a>
-                        <a class="hover:text-forest-green transition-colors" href="#">Careers</a>
-                        <a class="hover:text-forest-green transition-colors" href="#">Contact</a>
-                    </nav>
-                </div>
-                <div class="flex flex-col gap-6">
-                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-text-muted">Legal</h4>
-                    <nav class="flex flex-col gap-4 text-sm font-light text-text-muted">
-                        <a class="hover:text-forest-green transition-colors" href="#">Privacy Policy</a>
-                        <a class="hover:text-forest-green transition-colors" href="#">Terms of Service</a>
-                    </nav>
-                </div>
             </div>
         </div>
-        <div class="mt-20 pt-10 border-t border-forest-green/5 flex flex-col md:flex-row
-                    justify-between items-center gap-6 text-[10px] text-text-muted/60
-                    font-bold tracking-[0.1em] uppercase">
-            <div>© 2026 Orgence AI. All rights reserved.</div>
-            <div class="flex gap-8">
-                <span>London</span>
-                <span>New York</span>
-                <span>San Francisco</span>
+
+        <!-- Link columns -->
+        <div class="md:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-12" data-reveal data-delay="1">
+
+            <!-- Services -->
+            <div>
+                <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 mb-6">
+                    Services
+                </h4>
+                <nav class="flex flex-col gap-4">
+                    <a class="footer-link" href="index.html#diagnostic">The Diagnostic</a>
+                    <a class="footer-link" href="index.html#process">Methodology</a>
+                    <a class="footer-link" href="index.html#problem">The Challenge</a>
+                    <a class="footer-link" href="briefing.html">Request Briefing</a>
+                </nav>
             </div>
+
+            <!-- Company -->
+            <div>
+                <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 mb-6">
+                    Company
+                </h4>
+                <nav class="flex flex-col gap-4">
+                    <a class="footer-link" href="#">About</a>
+                    <a class="footer-link" href="#">Careers</a>
+                    <a class="footer-link" href="#">Press</a>
+                    <a class="footer-link" href="#">Partners</a>
+                </nav>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 mb-6">
+                    Contact
+                </h4>
+                <nav class="flex flex-col gap-4">
+                    <a class="footer-link" href="mailto:hello@orgence.ai">hello@orgence.ai</a>
+                    <a class="footer-link" href="#">Book a Call</a>
+                    <a class="footer-link" href="#">LinkedIn</a>
+                </nav>
+            </div>
+
         </div>
     </div>
+
+    <!-- ── Bottom bar ──────────────────────────────────────── -->
+    <div class="pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+        <p class="text-[10px] text-white/25 font-bold tracking-[0.1em] uppercase">
+            © 2026 Orgence AI. All rights reserved.
+        </p>
+        <div class="flex flex-wrap justify-center md:justify-end items-center gap-x-8 gap-y-3
+                    text-[10px] text-white/25 font-bold tracking-[0.1em] uppercase">
+            <a href="#" class="hover:text-white/60 transition-colors">Privacy Policy</a>
+            <a href="#" class="hover:text-white/60 transition-colors">Terms of Service</a>
+            <span class="text-white/10 hidden md:inline">|</span>
+            <span>London</span>
+            <span class="text-white/15">·</span>
+            <span>New York</span>
+            <span class="text-white/15">·</span>
+            <span>San Francisco</span>
+        </div>
+    </div>
+
+</div>
 </footer>`;
         },
     };

@@ -167,6 +167,19 @@ html { scroll-behavior: smooth; }
     animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
 }
 
+/* ── Footer links ─────────────────────────────────────────── */
+.footer-link {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: rgba(250, 249, 246, 0.50);
+    transition: color 0.25s ease, padding-left 0.25s ease;
+}
+.footer-link:hover {
+    color: rgba(250, 249, 246, 0.90);
+    padding-left: 4px;
+}
+
 /* ── Hamburger button ─────────────────────────────────────── */
 .hamburger-bar {
     display: block;
