@@ -1,497 +1,579 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Orgence AI — Executive Strategic Advisory</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orgence AI — AI Consulting for Ambitious Companies</title>
+    <meta name="description" content="Orgence partners with ambitious companies to design, deploy, and scale AI systems that create measurable business impact." />
 
-<!-- ── Fonts ─────────────────────────────────────────────── -->
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"/>
+    <!-- Tailwind CSS (Play CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/config.js"></script>
 
-<!-- ── Shared styles ──────────────────────────────────────── -->
-<link rel="stylesheet" href="assets/css/global.css"/>
+    <!-- Global styles -->
+    <link rel="stylesheet" href="assets/css/global.css" />
 
-<!-- ── Tailwind: CDN first (defines the tailwind global), then config ── -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script src="assets/js/config.js"></script>
-
-<!-- ── Tailwind: @layer directives (must stay here) ──────── -->
-<style type="text/tailwindcss">
-    @layer base {
-        body {
-            @apply bg-earth-primary text-text-main antialiased font-sans;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            @apply font-serif;
-        }
-    }
-</style>
-
-<!-- ── Shared component definitions ──────────────────────── -->
-<script src="assets/js/components.js"></script>
+    <style type="text/tailwindcss">
+        /* Page-specific Tailwind overrides go here */
+    </style>
 </head>
+<body>
 
-<body class="selection:bg-forest-green selection:text-earth-primary">
+    <!-- Header injected by components.js -->
+    <header id="site-header"></header>
 
-<!-- ── Header (injected from components.js) ──────────────── -->
-<div id="header-mount"></div>
-<script>
-    document.getElementById('header-mount').outerHTML =
-        OrgenceComponents.header('home');
-</script>
+    <!-- ─── CONTENT ─────────────────────────────────────────── -->
 
-<!-- ═══════════════════════════════════════════════════════
-     HERO
-═══════════════════════════════════════════════════════════ -->
-<section class="relative pt-16 pb-16 lg:pb-32 px-8 lg:px-16">
-<div class="narrative-container">
-<div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-end">
+    <main>
 
-    <div class="lg:w-3/5">
-        <p class="hero-label text-[10px] font-bold uppercase tracking-[0.3em] text-terracotta mb-8">
-            Strategic Advisory
-        </p>
-        <h1 class="text-5xl md:text-7xl xl:text-8xl font-normal leading-[1.05] text-forest-green tracking-tight">
-            <span class="hero-line block opacity-60 italic">AI decisions are</span>
-            <span class="hero-line block">easy to get wrong</span>
-            <span class="hero-line block text-terracotta">in growing businesses.</span>
-        </h1>
-    </div>
+        <!-- ── Hero ─────────────────────────────────────────── -->
+        <section class="hero">
+            <div class="narrative-container">
+                <div class="hero-inner">
 
-    <div class="lg:w-2/5 pb-4">
-        <p class="text-xl text-text-muted font-light leading-relaxed mb-10 italic"
-           data-reveal data-delay="1">
-            Bridging the gap between technological hype and measurable revenue. We provide
-            e-commerce founders with the strategic clarity of a management consultancy,
-            tailored for the AI age.
-        </p>
-        <div class="space-y-4 mb-12" data-reveal data-delay="2">
-            <div class="flex items-center gap-4 text-sm text-forest-green border-b border-border-earth pb-3">
-                <span class="font-serif italic opacity-50">01</span>
-                <span>Avoid technical debt pre-code</span>
-            </div>
-            <div class="flex items-center gap-4 text-sm text-forest-green border-b border-border-earth pb-3">
-                <span class="font-serif italic opacity-50">02</span>
-                <span>Validate AI ROI financially</span>
-            </div>
-        </div>
-        <a href="briefing.html"
-           class="bg-forest-green text-earth-primary hover:bg-terracotta text-xs uppercase
-                  tracking-widest font-bold py-5 px-12 transition-all duration-300
-                  flex items-center gap-4"
-           data-reveal data-delay="3">
-            Request Briefing
-            <span class="material-symbols-outlined text-lg">arrow_forward</span>
-        </a>
-    </div>
+                    <!-- Left: text -->
+                    <div class="hero-text">
+                        <span class="hero-eyebrow" data-reveal>AI Consulting</span>
+                        <h1 class="hero-headline" data-reveal data-delay="1">
+                            AI solutions built for real business outcomes
+                        </h1>
+                        <p class="hero-body" data-reveal data-delay="2">
+                            Orgence partners with ambitious companies to design, deploy, and scale AI systems that create measurable impact — from strategy through to production.
+                        </p>
+                        <div class="hero-actions" data-reveal data-delay="3">
+                            <a href="#contact" class="btn-primary">Start a project &nbsp;&rarr;</a>
+                            <a href="#work"    class="btn-secondary">See our work</a>
+                        </div>
+                    </div>
 
-</div>
-</div>
-</section>
+                    <!-- Right: visual card -->
+                    <div class="hero-visual" data-reveal data-delay="2">
+                        <div class="hero-card">
 
-<!-- ═══════════════════════════════════════════════════════
-     SOCIAL PROOF BANNER
-═══════════════════════════════════════════════════════════ -->
-<div class="bg-forest-green py-10 banner-animate">
-<div class="narrative-container px-8 lg:px-16 flex flex-col md:flex-row justify-between items-center gap-6">
-    <span class="text-[10px] uppercase tracking-[0.2em] text-earth-primary/60">Operator Experience</span>
-    <p class="text-sm font-light text-earth-primary/90 tracking-wide text-center md:text-right">
-        Partners have scaled e-commerce operations from
-        <span class="text-white font-medium">$10M to $100M+</span> revenue.
-    </p>
-</div>
-</div>
+                            <div class="hero-card-header">
+                                <span class="hero-card-dot"></span>
+                                <span class="hero-card-dot"></span>
+                                <span class="hero-card-dot"></span>
+                                <span class="hero-card-label">AI Performance &middot; Live</span>
+                            </div>
 
-<!-- ═══════════════════════════════════════════════════════
-     THE STRATEGIC IMPERATIVE
-═══════════════════════════════════════════════════════════ -->
-<section class="section-flow bg-earth-secondary px-8 lg:px-16" id="problem">
-<div class="narrative-container">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-32">
+                            <div class="hero-card-metrics">
+                                <div class="hero-card-metric">
+                                    <span class="hero-card-metric-value">+47%</span>
+                                    <span class="hero-card-metric-label">Operational efficiency</span>
+                                </div>
+                                <div class="hero-card-metric">
+                                    <span class="hero-card-metric-value">$2.4M</span>
+                                    <span class="hero-card-metric-label">Cost savings identified</span>
+                                </div>
+                                <div class="hero-card-metric">
+                                    <span class="hero-card-metric-value">12 wks</span>
+                                    <span class="hero-card-metric-label">Avg. time to deploy</span>
+                                </div>
+                                <div class="hero-card-metric">
+                                    <span class="hero-card-metric-value">98%</span>
+                                    <span class="hero-card-metric-label">Client satisfaction</span>
+                                </div>
+                            </div>
 
-    <div class="lg:col-span-5">
-        <h2 class="text-4xl md:text-5xl font-normal text-forest-green leading-tight mb-8" data-reveal>
-            The Strategic <br/><span class="text-terracotta italic">Imperative</span>
-        </h2>
-        <div class="w-24 h-px bg-terracotta/30 mb-12" data-reveal data-delay="1"></div>
-        <div class="pl-8 border-l border-terracotta/20 py-4 italic text-2xl font-serif
-                    text-forest-green leading-relaxed"
-             data-reveal data-delay="2">
-            "We do not sell code. We sell the confidence to architect the correct solution."
-        </div>
-    </div>
+                            <div class="hero-card-bar-row">
+                                <div class="hero-card-bar" style="height:42%"></div>
+                                <div class="hero-card-bar" style="height:60%"></div>
+                                <div class="hero-card-bar" style="height:50%"></div>
+                                <div class="hero-card-bar accent-light" style="height:85%"></div>
+                                <div class="hero-card-bar" style="height:68%"></div>
+                                <div class="hero-card-bar accent" style="height:100%"></div>
+                                <div class="hero-card-bar" style="height:78%"></div>
+                            </div>
 
-    <div class="lg:col-span-7 flex flex-col gap-12">
-        <p class="text-2xl md:text-3xl font-light leading-relaxed text-text-muted" data-reveal>
-            The market is saturated with noise. Founders face a barrage of "magic button"
-            solutions that often result in capital inefficiency and unused software inventory.
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-4">
-            <div class="group" data-reveal data-delay="1">
-                <span class="block text-terracotta mb-4 text-[10px] font-bold tracking-[0.2em]">01 // COST</span>
-                <h3 class="text-xl font-serif text-forest-green mb-4">Hidden Capital Drain</h3>
-                <p class="text-sm font-light text-text-muted leading-relaxed">
-                    Implementation frequently exceeds license fees by a factor of three due to
-                    integration complexities.
-                </p>
-            </div>
-            <div class="group" data-reveal data-delay="2">
-                <span class="block text-terracotta mb-4 text-[10px] font-bold tracking-[0.2em]">02 // VELOCITY</span>
-                <h3 class="text-xl font-serif text-forest-green mb-4">Strategic Paralysis</h3>
-                <p class="text-sm font-light text-text-muted leading-relaxed">
-                    Delayed adoption creates asymmetric competitive disadvantages in a rapidly
-                    evolving landscape.
-                </p>
-            </div>
-        </div>
-    </div>
+                            <div class="hero-card-footer">
+                                <span class="hero-card-footer-label">Q1 2026 &middot; Across all clients</span>
+                                <span class="hero-card-footer-badge">&uarr; 23% YoY</span>
+                            </div>
 
-</div>
-</div>
-</section>
+                        </div>
+                    </div>
 
-<!-- ═══════════════════════════════════════════════════════
-     DECISION PRODUCT + CARDS
-═══════════════════════════════════════════════════════════ -->
-<section class="section-flow px-8 lg:px-16 bg-earth-primary">
-<div class="narrative-container text-center pb-28">
-    <h2 class="text-4xl md:text-6xl font-serif text-forest-green leading-tight max-w-4xl mx-auto">
-        A <span class="text-terracotta italic">decision product</span>, not a technical project.
-    </h2>
-</div>
-<div class="narrative-container">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-forest-green/[0.07]">
-
-    <!-- Card 1 -->
-    <div class="bg-earth-primary p-8 lg:p-14 group hover:bg-earth-secondary
-                transition-all duration-500 flex flex-col"
-         data-reveal data-delay="1">
-        <div class="flex items-end justify-between mb-6">
-            <span class="font-serif italic text-[4.5rem] leading-none
-                         text-terracotta/20 group-hover:text-terracotta/50
-                         transition-colors duration-500">01</span>
-            <span class="material-symbols-outlined text-forest-green/20
-                         group-hover:text-terracotta transition-colors duration-400
-                         text-2xl mb-1">architecture</span>
-        </div>
-        <div class="w-full h-px bg-forest-green/10 group-hover:bg-terracotta/30
-                    transition-colors duration-500 mb-10"></div>
-        <h3 class="text-base font-bold text-forest-green uppercase tracking-wider mb-5">
-            No Implementation
-        </h3>
-        <p class="text-text-muted text-sm font-light leading-relaxed flex-1">
-            We maintain strict advisory objectivity. Our incentives are not tied to
-            development cycles or billable engineering hours.
-        </p>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="bg-earth-primary p-8 lg:p-14 group hover:bg-earth-secondary
-                transition-all duration-500 flex flex-col"
-         data-reveal data-delay="2">
-        <div class="flex items-end justify-between mb-6">
-            <span class="font-serif italic text-[4.5rem] leading-none
-                         text-terracotta/20 group-hover:text-terracotta/50
-                         transition-colors duration-500">02</span>
-            <span class="material-symbols-outlined text-forest-green/20
-                         group-hover:text-terracotta transition-colors duration-400
-                         text-2xl mb-1">groups</span>
-        </div>
-        <div class="w-full h-px bg-forest-green/10 group-hover:bg-terracotta/30
-                    transition-colors duration-500 mb-10"></div>
-        <h3 class="text-base font-bold text-forest-green uppercase tracking-wider mb-5">
-            No Staffing
-        </h3>
-        <p class="text-text-muted text-sm font-light leading-relaxed flex-1">
-            We are not a recruitment agency. We define the necessary roles and
-            organisational structure for your internal success.
-        </p>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="bg-earth-primary p-8 lg:p-14 group hover:bg-earth-secondary
-                transition-all duration-500 flex flex-col"
-         data-reveal data-delay="3">
-        <div class="flex items-end justify-between mb-6">
-            <span class="font-serif italic text-[4.5rem] leading-none
-                         text-terracotta/20 group-hover:text-terracotta/50
-                         transition-colors duration-500">03</span>
-            <span class="material-symbols-outlined text-forest-green/20
-                         group-hover:text-terracotta transition-colors duration-400
-                         text-2xl mb-1">lock_open</span>
-        </div>
-        <div class="w-full h-px bg-forest-green/10 group-hover:bg-terracotta/30
-                    transition-colors duration-500 mb-10"></div>
-        <h3 class="text-base font-bold text-forest-green uppercase tracking-wider mb-5">
-            No Vendor Lock-in
-        </h3>
-        <p class="text-text-muted text-sm font-light leading-relaxed flex-1">
-            100% agnostic. Recommendations are driven solely by your business model
-            requirements and technical constraints.
-        </p>
-    </div>
-
-</div>
-</div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════════
-     TARGET PROFILE
-═══════════════════════════════════════════════════════════ -->
-<section class="section-flow px-8 lg:px-16 bg-forest-green text-earth-primary">
-<div class="narrative-container">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
-
-    <div class="space-y-12">
-        <div data-reveal>
-            <span class="text-[10px] uppercase tracking-[0.3em] font-bold text-terracotta mb-6 block">
-                Target Profile
-            </span>
-            <h3 class="text-4xl font-serif mb-8">Ideal Client</h3>
-        </div>
-        <ul class="space-y-12">
-            <li class="flex gap-8 group" data-reveal data-delay="1">
-                <span class="target-num text-terracotta font-serif italic text-2xl opacity-50">01</span>
-                <div>
-                    <p class="text-xl font-light">
-                        Founders of E-commerce brands with
-                        <span class="text-white font-medium border-b border-terracotta/30">$10M – $100M GMV</span>.
-                    </p>
                 </div>
-            </li>
-            <li class="flex gap-8 group" data-reveal data-delay="2">
-                <span class="target-num text-terracotta font-serif italic text-2xl opacity-50">02</span>
-                <div>
-                    <p class="text-xl font-light">
-                        Teams seeking automation in supply chain, support, or personalisation.
-                    </p>
+            </div>
+        </section>
+
+        <!-- ── Stats bar ──────────────────────────────────── -->
+        <section class="stats-bar">
+            <div class="narrative-container">
+                <div class="stats-inner">
+
+                    <div class="stat-item" data-reveal>
+                        <span class="stat-value">50+</span>
+                        <span class="stat-label">Projects delivered</span>
+                    </div>
+
+                    <div class="stat-item" data-reveal data-delay="1">
+                        <span class="stat-value">12</span>
+                        <span class="stat-label">Industries served</span>
+                    </div>
+
+                    <div class="stat-item" data-reveal data-delay="2">
+                        <span class="stat-value">$40M+</span>
+                        <span class="stat-label">Value unlocked for clients</span>
+                    </div>
+
+                    <div class="stat-item" data-reveal data-delay="3">
+                        <span class="stat-value">100%</span>
+                        <span class="stat-label">Client retention rate</span>
+                    </div>
+
                 </div>
-            </li>
-            <li class="flex gap-8 group" data-reveal data-delay="3">
-                <span class="target-num text-terracotta font-serif italic text-2xl opacity-50">03</span>
-                <div>
-                    <p class="text-xl font-light">
-                        Leaders requiring a 3-year strategic roadmap, not a tactical fix.
-                    </p>
+            </div>
+        </section>
+
+        <!-- ── Services ───────────────────────────────────── -->
+        <section class="services-section section-flow" id="services">
+            <div class="narrative-container">
+
+                <div class="services-header">
+                    <div class="services-header-left" data-reveal>
+                        <span class="section-eyebrow">Our Services</span>
+                        <h2 class="section-headline">Three ways we transform your business with AI</h2>
+                    </div>
+                    <div class="services-header-right" data-reveal data-delay="1">
+                        <p class="section-body">Whether you're exploring what's possible or scaling a system already in production, we have a service model built around where you are.</p>
+                    </div>
                 </div>
-            </li>
-        </ul>
-    </div>
 
-    <div class="space-y-12 bg-white/5 p-8 lg:p-20 backdrop-blur-sm border border-white/5"
-         data-reveal data-delay="2">
-        <div>
-            <span class="text-[10px] uppercase tracking-[0.3em] font-bold text-white/40 mb-6 block">
-                Non-Target
-            </span>
-            <h3 class="text-4xl font-serif text-white/60 mb-8">Out of Scope</h3>
-        </div>
-        <ul class="space-y-10">
-            <li class="flex gap-8">
-                <span class="text-white/20 font-serif italic text-xl">01</span>
-                <p class="text-earth-primary/50 font-light text-lg">
-                    Early-stage startups pre-product market fit.
-                </p>
-            </li>
-            <li class="flex gap-8">
-                <span class="text-white/20 font-serif italic text-xl">02</span>
-                <p class="text-earth-primary/50 font-light text-lg">
-                    Companies seeking low-cost offshore development capacity.
-                </p>
-            </li>
-        </ul>
-    </div>
+                <div class="services-grid">
 
-</div>
-</div>
-</section>
+                    <!-- Card 1: AI Strategy -->
+                    <div class="service-card" data-reveal data-delay="1">
+                        <div class="service-card-top" data-num="01">
+                            <div class="service-card-icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#f96300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="20" cy="20" r="13"/>
+                                    <circle cx="20" cy="20" r="4.5"/>
+                                    <line x1="20" y1="7"  x2="20" y2="15.5"/>
+                                    <line x1="20" y1="24.5" x2="20" y2="33"/>
+                                    <line x1="7"  y1="20" x2="15.5" y2="20"/>
+                                    <line x1="24.5" y1="20" x2="33" y2="20"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="service-card-body">
+                            <h3 class="service-card-title">AI Strategy &amp; Roadmap</h3>
+                            <p class="service-card-desc">We audit your current operations, identify the highest-value AI opportunities, and deliver a prioritised roadmap with clear ROI projections — so you invest in the right things first.</p>
+                            <a href="#contact" class="service-card-link">Learn more &nbsp;&rarr;</a>
+                        </div>
+                    </div>
 
-<!-- ═══════════════════════════════════════════════════════
-     THE ORGENCE DIAGNOSTIC
-═══════════════════════════════════════════════════════════ -->
-<section class="section-flow px-8 lg:px-16" id="diagnostic">
-<div class="narrative-container">
-<div class="flex flex-col lg:flex-row gap-20">
+                    <!-- Card 2: Implementation -->
+                    <div class="service-card" data-reveal data-delay="2">
+                        <div class="service-card-top" data-num="02">
+                            <div class="service-card-icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#f96300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="14,17 8,20 14,23"/>
+                                    <polyline points="26,17 32,20 26,23"/>
+                                    <line x1="22" y1="13" x2="18" y2="27"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="service-card-body">
+                            <h3 class="service-card-title">Implementation &amp; Engineering</h3>
+                            <p class="service-card-desc">From LLM integration to custom model deployment, our engineers build production-ready AI systems inside your existing stack — fast, secure, and built to last.</p>
+                            <a href="#contact" class="service-card-link">Learn more &nbsp;&rarr;</a>
+                        </div>
+                    </div>
 
-    <div class="lg:w-1/3">
-        <div class="sticky top-40">
-            <h2 class="text-4xl md:text-5xl font-serif text-forest-green mb-8" data-reveal>
-                The Orgence <br/>Diagnostic
-            </h2>
-            <p class="text-text-muted font-light text-xl mb-12 leading-relaxed"
-               data-reveal data-delay="1">
-                A 14-day intensive audit and strategy sprint designed to de-risk your AI investment.
-            </p>
-            <div class="h-0.5 w-16 bg-terracotta" data-reveal data-delay="2"></div>
-        </div>
-    </div>
+                    <!-- Card 3: Training -->
+                    <div class="service-card" data-reveal data-delay="3">
+                        <div class="service-card-top" data-num="03">
+                            <div class="service-card-icon">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="#f96300" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6,30 15,19 21,25 34,10"/>
+                                    <polyline points="27,10 34,10 34,17"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="service-card-body">
+                            <h3 class="service-card-title">Training &amp; Enablement</h3>
+                            <p class="service-card-desc">Practical, hands-on AI training for your leadership and product teams — so your organisation can confidently own, evolve, and scale AI long after our engagement ends.</p>
+                            <a href="#contact" class="service-card-link">Learn more &nbsp;&rarr;</a>
+                        </div>
+                    </div>
 
-    <div class="lg:w-2/3">
-    <div class="space-y-1 w-full">
-
-        <div class="group py-12 border-b border-border-earth flex gap-12 items-start
-                    transition-all hover:pl-4" data-reveal>
-            <span class="diag-num text-4xl font-serif italic text-terracotta/20
-                         group-hover:text-terracotta/100 transition-colors">I</span>
-            <div>
-                <h3 class="text-2xl font-serif text-forest-green mb-4">Opportunity Map</h3>
-                <p class="text-text-muted text-lg font-light leading-relaxed">
-                    We analyse the value chain to identify margin-driving AI opportunities.
-                    Delivered as a ranked list scored by
-                    <span class="text-forest-green font-medium">ROI</span> and
-                    <span class="text-forest-green font-medium">feasibility</span>.
-                </p>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="group py-12 border-b border-border-earth flex gap-12 items-start
-                    transition-all hover:pl-4" data-reveal data-delay="1">
-            <span class="diag-num text-4xl font-serif italic text-terracotta/20
-                         group-hover:text-terracotta/100 transition-colors">II</span>
-            <div>
-                <h3 class="text-2xl font-serif text-forest-green mb-4">Risk Analysis</h3>
-                <p class="text-text-muted text-lg font-light leading-relaxed">
-                    Comprehensive assessment of data privacy, hallucination risks, and vendor
-                    dependencies. Mitigation strategies provided for every proposed implementation.
-                </p>
+        <!-- ── Trust logos ─────────────────────────────────── -->
+        <section class="trust-section">
+            <div class="narrative-container">
+                <p class="trust-label">Trusted by teams across every industry</p>
+                <div class="trust-logos">
+                    <span class="trust-logo">Meridian</span>
+                    <span class="trust-logo">Fortis</span>
+                    <span class="trust-logo">Nexora</span>
+                    <span class="trust-logo">Castellum</span>
+                    <span class="trust-logo">Alphawave</span>
+                    <span class="trust-logo">Veritas</span>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="group py-12 border-b border-border-earth flex gap-12 items-start
-                    transition-all hover:pl-4" data-reveal data-delay="2">
-            <span class="diag-num text-4xl font-serif italic text-terracotta/20
-                         group-hover:text-terracotta/100 transition-colors">III</span>
-            <div>
-                <h3 class="text-2xl font-serif text-forest-green mb-4">Stack Architecture</h3>
-                <p class="text-text-muted text-lg font-light leading-relaxed">
-                    Build vs. Buy analysis. Model selection (Open source vs. Proprietary). We design
-                    the optimal technical stack for your budget and capabilities.
-                </p>
+        <!-- ── Feature: Our Approach ─────────────────────── -->
+        <section class="feature-section section-flow" id="about">
+            <div class="narrative-container">
+                <div class="feature-inner">
+
+                    <div class="feature-text" data-reveal>
+                        <span class="section-eyebrow">Our Approach</span>
+                        <h2 class="section-headline" style="margin-bottom:24px;">We embed, we don't just advise</h2>
+                        <p class="feature-body">Most consultants hand over a strategy document and leave. We stay — working directly alongside your engineers, product managers, and leadership until the AI is live, measured, and genuinely yours.</p>
+                        <ul class="feature-list">
+                            <li>Dedicated on-site and remote teams</li>
+                            <li>End-to-end ownership from discovery to deployment</li>
+                            <li>Knowledge transfer built into every engagement</li>
+                            <li>No vendor lock-in, ever</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-visual" data-reveal data-delay="1">
+                        <div class="feature-card fc-dark">
+                            <span class="fc-label">Our process &middot; 4 phases</span>
+                            <div class="fc-steps">
+                                <div class="fc-step active">
+                                    <span class="fc-step-num">01</span>
+                                    <div class="fc-step-content">
+                                        <strong>Discovery &amp; Audit</strong>
+                                        <span>2 weeks</span>
+                                    </div>
+                                    <span class="fc-step-badge">Active</span>
+                                </div>
+                                <div class="fc-step">
+                                    <span class="fc-step-num">02</span>
+                                    <div class="fc-step-content">
+                                        <strong>Strategy &amp; Roadmap</strong>
+                                        <span>2 weeks</span>
+                                    </div>
+                                </div>
+                                <div class="fc-step">
+                                    <span class="fc-step-num">03</span>
+                                    <div class="fc-step-content">
+                                        <strong>Build &amp; Deploy</strong>
+                                        <span>6–10 weeks</span>
+                                    </div>
+                                </div>
+                                <div class="fc-step">
+                                    <span class="fc-step-num">04</span>
+                                    <div class="fc-step-content">
+                                        <strong>Scale &amp; Optimise</strong>
+                                        <span>Ongoing</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="group py-12 flex gap-12 items-start transition-all hover:pl-4"
-             data-reveal data-delay="3">
-            <span class="diag-num text-4xl font-serif italic text-terracotta/20
-                         group-hover:text-terracotta/100 transition-colors">IV</span>
-            <div>
-                <h3 class="text-2xl font-serif text-forest-green mb-4">Talent Roadmap</h3>
-                <p class="text-text-muted text-lg font-light leading-relaxed">
-                    Definition of necessary hires, JD creation, and interview process structuring
-                    for key technical roles.
-                </p>
+        <!-- ── Feature: Track Record ──────────────────────── -->
+        <section class="feature-section feature-section--alt section-flow">
+            <div class="narrative-container">
+                <div class="feature-inner feature-inner--reversed">
+
+                    <div class="feature-text" data-reveal>
+                        <span class="section-eyebrow">Our Track Record</span>
+                        <h2 class="section-headline" style="margin-bottom:24px;">Outcomes first. Technology second.</h2>
+                        <p class="feature-body">We start with your business problem — not with a technology solution. Every AI system we build is designed around a measurable outcome, with ROI tracked from day one.</p>
+                        <ul class="feature-list">
+                            <li>Average 47% improvement in operational efficiency</li>
+                            <li>$40M+ in cumulative value created for clients</li>
+                            <li>12-week average from discovery to live deployment</li>
+                            <li>100% client retention across all engagements</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-visual" data-reveal data-delay="1">
+                        <div class="feature-card fc-light">
+                            <span class="fc-label">Client impact &middot; Average across engagements</span>
+                            <div class="fc-impact-rows">
+                                <div class="fc-impact-row">
+                                    <div class="fc-impact-row-header">
+                                        <span class="fc-impact-label">Process automation</span>
+                                        <span class="fc-impact-val">73%</span>
+                                    </div>
+                                    <div class="fc-impact-bar-track">
+                                        <div class="fc-impact-bar" style="width:73%"></div>
+                                    </div>
+                                </div>
+                                <div class="fc-impact-row">
+                                    <div class="fc-impact-row-header">
+                                        <span class="fc-impact-label">Decision speed</span>
+                                        <span class="fc-impact-val">58%</span>
+                                    </div>
+                                    <div class="fc-impact-bar-track">
+                                        <div class="fc-impact-bar" style="width:58%"></div>
+                                    </div>
+                                </div>
+                                <div class="fc-impact-row">
+                                    <div class="fc-impact-row-header">
+                                        <span class="fc-impact-label">Cost reduction</span>
+                                        <span class="fc-impact-val">41%</span>
+                                    </div>
+                                    <div class="fc-impact-bar-track">
+                                        <div class="fc-impact-bar" style="width:41%"></div>
+                                    </div>
+                                </div>
+                                <div class="fc-impact-row">
+                                    <div class="fc-impact-row-header">
+                                        <span class="fc-impact-label">Revenue growth</span>
+                                        <span class="fc-impact-val">34%</span>
+                                    </div>
+                                    <div class="fc-impact-bar-track">
+                                        <div class="fc-impact-bar" style="width:34%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="fc-impact-footnote">&uarr; Improvement post-deployment</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
+        </section>
 
-    </div>
-    </div>
+        <!-- ── Case Studies ──────────────────────────────────── -->
+        <section class="casestudies-section section-flow" id="work">
+            <div class="narrative-container">
 
-</div>
-</div>
-</section>
+                <div class="casestudies-header" data-reveal>
+                    <div>
+                        <span class="section-eyebrow">Our Work</span>
+                        <h2 class="section-headline">Results that speak for themselves</h2>
+                    </div>
+                </div>
 
-<!-- ═══════════════════════════════════════════════════════
-     ENGAGEMENT METHODOLOGY
-═══════════════════════════════════════════════════════════ -->
-<section class="section-flow px-8 lg:px-16 bg-earth-secondary" id="process">
-<div class="narrative-container">
+                <div class="casestudies-grid">
 
-    <div class="flex justify-between items-end mb-20 border-b border-forest-green/10 pb-12">
-        <div data-reveal>
-            <span class="text-[10px] uppercase tracking-[0.3em] font-bold text-terracotta mb-4 block">
-                Process
-            </span>
-            <h2 class="text-4xl font-serif text-forest-green">Engagement Methodology</h2>
-        </div>
-        <span class="hidden md:block text-[10px] uppercase tracking-[0.2em] font-bold text-text-muted"
-              data-reveal data-delay="1">14 Day Sprint</span>
-    </div>
+                    <div class="cs-card" data-reveal data-delay="1">
+                        <div class="cs-card-top">
+                            <span class="cs-tag">Financial Services</span>
+                            <span class="cs-big-metric">60%</span>
+                            <span class="cs-metric-label">reduction in manual processing time</span>
+                        </div>
+                        <div class="cs-card-body">
+                            <h3 class="cs-title">Automating credit risk assessment for a global bank</h3>
+                            <p class="cs-desc">We built an ML pipeline that replaced a 3-day manual review process with real-time AI scoring — processing 10,000+ applications daily with 94% accuracy and full auditability.</p>
+                            <a href="#" class="cs-link">Read case study &nbsp;&rarr;</a>
+                        </div>
+                    </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-16 relative">
-        <div class="absolute top-1/2 left-0 right-0 h-px bg-forest-green/5
-                    hidden lg:block -translate-y-1/2"></div>
+                    <div class="cs-card" data-reveal data-delay="2">
+                        <div class="cs-card-top">
+                            <span class="cs-tag">Retail</span>
+                            <span class="cs-big-metric">$2.4M</span>
+                            <span class="cs-metric-label">saved in year one</span>
+                        </div>
+                        <div class="cs-card-body">
+                            <h3 class="cs-title">Demand forecasting &amp; inventory optimisation for a retail chain</h3>
+                            <p class="cs-desc">A custom forecasting model reduced overstock by 41% and stockouts by 58%, directly increasing gross margin across 200+ store locations without changing logistics infrastructure.</p>
+                            <a href="#" class="cs-link">Read case study &nbsp;&rarr;</a>
+                        </div>
+                    </div>
 
-        <div class="relative bg-earth-primary p-8 lg:p-10 magazine-shadow card-lift
-                    transition-all duration-500" data-reveal data-delay="1">
-            <div class="text-[10px] font-bold uppercase tracking-[0.2em] text-terracotta mb-10">
-                Phase 01
+                </div>
+
+                <div class="casestudies-footer" data-reveal>
+                    <a href="#" class="btn-secondary">View all case studies</a>
+                </div>
+
             </div>
-            <h3 class="text-2xl font-serif text-forest-green mb-6">Discovery</h3>
-            <p class="text-text-muted font-light leading-relaxed mb-10">
-                Stakeholder interviews, data infrastructure audit, and bottleneck identification.
-            </p>
-            <div class="text-[10px] text-text-muted/40 font-bold tracking-widest uppercase">
-                DAYS 1–2
+        </section>
+
+        <!-- ── Testimonials ───────────────────────────────── -->
+        <section class="testimonials-section section-flow">
+            <div class="narrative-container">
+
+                <div class="testimonials-header" data-reveal>
+                    <span class="section-eyebrow">Client Stories</span>
+                    <h2 class="section-headline">What our clients say</h2>
+                </div>
+
+                <div class="testimonials-grid">
+
+                    <div class="testimonial-card" data-reveal data-delay="1">
+                        <span class="testimonial-mark">&ldquo;</span>
+                        <p class="testimonial-quote">Orgence didn't just recommend AI tools — they fundamentally changed how our operations team thinks about automation. Within 12 weeks we'd cut manual processing time by over 60%.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">SC</div>
+                            <div>
+                                <span class="testimonial-name">Sarah Chen</span>
+                                <span class="testimonial-role">COO &middot; Meridian Group</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card" data-reveal data-delay="2">
+                        <span class="testimonial-mark">&ldquo;</span>
+                        <p class="testimonial-quote">The strategy session alone was worth the engagement. They identified three high-impact AI opportunities we'd completely overlooked, each with a clear payback timeline and no fluff.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">JW</div>
+                            <div>
+                                <span class="testimonial-name">James Whitfield</span>
+                                <span class="testimonial-role">CTO &middot; Fortis Capital</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card" data-reveal data-delay="3">
+                        <span class="testimonial-mark">&ldquo;</span>
+                        <p class="testimonial-quote">What sets Orgence apart is they stay until it works. Not until a report is delivered — until the system is in production and the team is genuinely confident running it independently.</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">PN</div>
+                            <div>
+                                <span class="testimonial-name">Priya Nair</span>
+                                <span class="testimonial-role">Head of Digital &middot; Nexora</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="relative bg-earth-primary p-8 lg:p-10 magazine-shadow card-lift
-                    transition-all duration-500" data-reveal data-delay="2">
-            <div class="text-[10px] font-bold uppercase tracking-[0.2em] text-terracotta mb-10">
-                Phase 02
+        <!-- ── FAQ ───────────────────────────────────────────── -->
+        <section class="faq-section section-flow">
+            <div class="narrative-container">
+
+                <div class="faq-header" data-reveal>
+                    <span class="section-eyebrow">FAQ</span>
+                    <h2 class="section-headline">Questions we hear most</h2>
+                </div>
+
+                <div class="faq-list">
+
+                    <div class="faq-item" data-reveal>
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How long does a typical engagement take?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Most engagements run 12–16 weeks from discovery through to live deployment. Strategy-only engagements typically conclude in 4 weeks. We scope a timeline around your priorities during our initial call — there's no fixed template.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-reveal>
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Do we need an in-house technical team to work with you?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No. We embed directly into your organisation and bring the technical expertise ourselves. If you do have engineers, we work alongside them. If not, we handle the full build — and train your team to own it independently by the time we're done.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-reveal>
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What industries do you specialise in?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We've delivered projects across financial services, retail, healthcare, logistics, media, and professional services. AI problems tend to be more similar across industries than people expect — but we always invest time in understanding the specific constraints and regulations in your sector.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-reveal>
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How do you structure pricing?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We work on a fixed-scope project basis, not day rates. Every engagement begins with a scoped proposal that lays out deliverables, timelines, and investment clearly — so there are no surprises. We'll discuss this transparently on our first call.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-reveal>
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What happens after the engagement ends?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Knowledge transfer is built into every engagement from day one — your team learns as we build. After handover, we offer optional retainer arrangements for ongoing advisory, monitoring, and iteration. Most clients choose to continue in some form; none are locked in.</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <h3 class="text-2xl font-serif text-forest-green mb-6">Analysis &amp; Modelling</h3>
-            <p class="text-text-muted font-light leading-relaxed mb-10">
-                ROI modelling, architectural design, and solution mapping. Async clarifications as needed.
-            </p>
-            <div class="text-[10px] text-text-muted/40 font-bold tracking-widest uppercase">
-                DAYS 3–10
+        </section>
+
+        <!-- ── Insights ────────────────────────────────────── -->
+        <section class="insights-section section-flow">
+            <div class="narrative-container">
+
+                <div class="insights-header" data-reveal>
+                    <div>
+                        <span class="section-eyebrow">Insights</span>
+                        <h2 class="section-headline">Thinking on AI from our team</h2>
+                    </div>
+                    <a href="#" class="btn-secondary">View all articles</a>
+                </div>
+
+                <div class="insights-grid">
+
+                    <article class="insight-card" data-reveal data-delay="1">
+                        <span class="insight-tag">Strategy</span>
+                        <span class="insight-meta">12 Feb 2026 &middot; 7 min read</span>
+                        <h3 class="insight-title">Why most AI strategies fail before they start</h3>
+                        <p class="insight-excerpt">The single biggest mistake companies make when approaching AI isn't technical — it's starting with the technology instead of the problem. Here's how to get the order right.</p>
+                        <a href="#" class="insight-link">Read article &nbsp;&rarr;</a>
+                    </article>
+
+                    <article class="insight-card" data-reveal data-delay="2">
+                        <span class="insight-tag">Operations</span>
+                        <span class="insight-meta">5 Feb 2026 &middot; 5 min read</span>
+                        <h3 class="insight-title">The hidden cost of not automating</h3>
+                        <p class="insight-excerpt">Every manual process that could be automated carries a cost far beyond headcount — in quality, speed, and the opportunity cost of your best people doing repetitive work.</p>
+                        <a href="#" class="insight-link">Read article &nbsp;&rarr;</a>
+                    </article>
+
+                    <article class="insight-card" data-reveal data-delay="3">
+                        <span class="insight-tag">Advisory</span>
+                        <span class="insight-meta">28 Jan 2026 &middot; 9 min read</span>
+                        <h3 class="insight-title">How to evaluate an AI vendor without a technical team</h3>
+                        <p class="insight-excerpt">Choosing an AI partner is one of the most consequential decisions a business leader will make. A practical framework for getting it right — without deep technical expertise.</p>
+                        <a href="#" class="insight-link">Read article &nbsp;&rarr;</a>
+                    </article>
+
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="relative bg-earth-primary p-8 lg:p-10 magazine-shadow card-lift
-                    transition-all duration-500" data-reveal data-delay="3">
-            <div class="text-[10px] font-bold uppercase tracking-[0.2em] text-terracotta mb-10">
-                Phase 03
+        <!-- ── Final CTA ──────────────────────────────────── -->
+        <section class="cta-section section-flow" id="contact">
+            <div class="narrative-container">
+                <div class="cta-inner">
+                    <h2 class="cta-headline" data-reveal>Ready to build AI that actually works?</h2>
+                    <p class="cta-body" data-reveal data-delay="1">Let's talk about your goals. No pitch deck, no drawn-out sales process — just a focused conversation about where AI can move the needle for your business.</p>
+                    <div class="cta-actions" data-reveal data-delay="2">
+                        <a href="mailto:hello@orgence.ai" class="btn-primary">Start a project &nbsp;&rarr;</a>
+                        <a href="#work" class="btn-ghost-white">See our work</a>
+                    </div>
+                </div>
             </div>
-            <h3 class="text-2xl font-serif text-forest-green mb-6">Strategic Handover</h3>
-            <p class="text-text-muted font-light leading-relaxed mb-10">
-                Diagnostic Report presentation, Q&amp;A session, and implementation roadmap delivery.
-            </p>
-            <div class="text-[10px] text-text-muted/40 font-bold tracking-widest uppercase">
-                DAYS 11–14
-            </div>
-        </div>
+        </section>
 
-    </div>
-</div>
-</section>
+    </main>
 
-<!-- ═══════════════════════════════════════════════════════
-     CLOSING CTA
-═══════════════════════════════════════════════════════════ -->
-<section class="section-flow px-8 text-center bg-earth-primary">
-<div class="max-w-4xl mx-auto flex flex-col items-center">
-    <h2 class="text-5xl md:text-7xl font-serif text-forest-green leading-tight mb-12" data-reveal>
-        Calm decisions beat<br/>
-        <span class="text-terracotta italic">fast decisions.</span>
-    </h2>
-    <p class="text-xl text-text-muted font-light max-w-xl mb-16" data-reveal data-delay="1">
-        Secure your roadmap with a diagnostic before committing capital.
-    </p>
-    <a href="briefing.html"
-       class="bg-forest-green hover:bg-terracotta text-earth-primary text-xs font-bold
-              uppercase tracking-[0.2em] py-6 px-16 transition-all duration-500 magazine-shadow"
-       data-reveal data-delay="2">
-        Request Briefing
-    </a>
-    <p class="text-[10px] text-text-muted/60 uppercase tracking-[0.2em] mt-12"
-       data-reveal data-delay="3">Limited availability Q4 2025</p>
-</div>
-</section>
+    <!-- Footer injected by components.js -->
+    <footer id="site-footer"></footer>
 
-<!-- ── Footer (injected from components.js) ──────────────── -->
-<div id="footer-mount"></div>
-<script>
-    document.getElementById('footer-mount').outerHTML =
-        OrgenceComponents.footer();
-</script>
-
-<!-- ── Global behaviours ──────────────────────────────────── -->
-<script src="assets/js/global.js"></script>
+    <!-- Scripts -->
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/global.js"></script>
+    <script>
+        document.getElementById('site-header').outerHTML = OrgenceComponents.header('home');
+        document.getElementById('site-footer').outerHTML = OrgenceComponents.footer();
+    </script>
 
 </body>
 </html>
