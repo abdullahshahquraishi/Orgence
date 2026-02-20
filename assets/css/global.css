@@ -77,14 +77,14 @@ body {
 }
 
 .section-flow {
-    padding-top: 120px;
-    padding-bottom: 120px;
+    padding-top: 72px;
+    padding-bottom: 72px;
 }
 
 @media (min-width: 768px) {
     .section-flow {
-        padding-top: 160px;
-        padding-bottom: 160px;
+        padding-top: 96px;
+        padding-bottom: 96px;
     }
 }
 
@@ -518,11 +518,11 @@ body {
 }
 
 /* ============================================================
-   FOOTER
+   FOOTER  —  BCG-style light cream
    ============================================================ */
 .site-footer {
-    background: #111111;
-    color: #FFFFFF;
+    background: #F3F1EC;
+    color: #111111;
 }
 
 .footer-container {
@@ -531,94 +531,185 @@ body {
     padding: 0 40px;
 }
 
-.footer-top {
+/* ── Main row ── */
+.footer-main {
     display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 80px;
-    padding: 80px 0 64px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    grid-template-columns: 1fr 180px 320px;
+    gap: 64px;
+    padding: 80px 0 72px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.10);
+    align-items: start;
 }
 
-.footer-logo {
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    margin-bottom: 16px;
-}
-.footer-logo-img {
-    height: 32px;
-    width: auto;
-    display: block;
-    filter: brightness(0) invert(1);
-}
-
-.footer-tagline {
-    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
-    font-size: 15px;
-    color: rgba(255, 255, 255, 0.4);
-    line-height: 1.6;
+/* Big serif tagline */
+.footer-big-tagline {
+    font-family: "Century Expanded", Georgia, "Times New Roman", serif;
+    font-size: 38px;
+    font-weight: 400;
+    color: #111111;
+    line-height: 1.22;
     margin: 0;
-    max-width: 220px;
+    letter-spacing: -0.01em;
 }
 
-.footer-cols {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
-
-.footer-col h4 {
-    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
-    font-size: 11px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.3);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin: 0 0 20px 0;
-}
-.footer-col ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+/* Compact nav column */
+.footer-nav {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 2px;
+    padding-top: 6px;
 }
-.footer-col ul a {
+.footer-nav a {
     font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
     font-size: 15px;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.55);
+    color: #111111;
     text-decoration: none;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     transition: color 0.2s ease;
 }
-.footer-col ul a:hover { color: #FFFFFF; }
+.footer-nav a:last-child { border-bottom: none; }
+.footer-nav a:hover { color: #f96300; }
 
+/* CTA block */
+.footer-assist {
+    padding-top: 4px;
+}
+.footer-assist-heading {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #111111;
+    margin: 0 0 12px 0;
+    line-height: 1.3;
+}
+.footer-assist-body {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 1.65;
+    margin: 0 0 24px 0;
+}
+.footer-assist-btn {
+    display: inline-block;
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #FFFFFF;
+    background: #111111;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 100px;
+    letter-spacing: 0.02em;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.footer-assist-btn:hover {
+    background: #f96300;
+}
+
+/* ── Bottom bar ── */
 .footer-bottom {
-    padding: 24px 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-}
-.footer-bottom p {
-    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.25);
-    margin: 0;
+    gap: 32px;
+    padding: 24px 0;
 }
 
-@media (max-width: 880px) {
-    .footer-top {
-        grid-template-columns: 1fr;
-        gap: 48px;
-        padding: 64px 0 48px;
-    }
-    .footer-cols { grid-template-columns: 1fr 1fr; }
-    .footer-tagline { max-width: 100%; }
-    .footer-container { padding: 0 24px; }
+.footer-logo-link {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
+    margin-right: auto;
 }
-@media (max-width: 480px) {
-    .footer-cols { grid-template-columns: 1fr; gap: 40px; }
+.footer-logo-img {
+    height: 28px;
+    width: auto;
+    display: block;
+}
+
+.footer-legal {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+.footer-legal a {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.45);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    padding: 0 16px;
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+.footer-legal a:first-child { padding-left: 0; }
+.footer-legal a:last-child  { border-right: none; }
+.footer-legal a:hover { color: #111111; }
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+.footer-social-label {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    white-space: nowrap;
+}
+.footer-social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+.footer-social-icon:hover {
+    border-color: #111111;
+    color: #111111;
+    background: rgba(0, 0, 0, 0.04);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .footer-main {
+        grid-template-columns: 1fr 160px 280px;
+        gap: 48px;
+    }
+    .footer-big-tagline { font-size: 32px; }
+}
+@media (max-width: 880px) {
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        padding: 64px 0 56px;
+    }
+    .footer-tagline-block { grid-column: 1 / -1; }
+    .footer-big-tagline { font-size: 30px; }
+    .footer-container { padding: 0 24px; }
+    .footer-bottom { flex-wrap: wrap; gap: 20px; }
+    .footer-legal { flex-wrap: wrap; }
+}
+@media (max-width: 600px) {
+    .footer-main { grid-template-columns: 1fr; gap: 40px; }
+    .footer-big-tagline { font-size: 28px; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .footer-logo-link { margin-right: 0; }
 }
 
 /* ============================================================
@@ -866,55 +957,93 @@ body {
 }
 
 /* ============================================================
-   TRUST STRIP
+   TRUST STRIP  —  dark scrolling marquee
    ============================================================ */
 .trust-section {
-    background: #FFFFFF;
-    padding: 64px 0;
-    border-top: 1px solid #F0F0F0;
+    background: #111111;
+    overflow: hidden;
+    padding: 0;
+}
+
+.trust-inner {
+    display: flex;
+    align-items: stretch;
+    height: 88px;
+}
+
+.trust-label-col {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 32px 0 40px;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    min-width: 200px;
 }
 
 .trust-label {
     font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
-    font-size: 12px;
-    font-weight: 500;
-    color: #AAAAAA;
-    letter-spacing: 0.12em;
+    font-size: 11px;
+    font-weight: 600;
+    color: #FFFFFF;
+    letter-spacing: 0.07em;
     text-transform: uppercase;
-    text-align: center;
-    margin: 0 0 40px 0;
+    line-height: 1.55;
+    margin: 0;
+    white-space: nowrap;
 }
 
-.trust-logos {
+.trust-track-wrap {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 56px;
-    flex-wrap: wrap;
+    mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%);
+}
+
+.trust-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    animation: trust-marquee 30s linear infinite;
 }
 
 .trust-logo {
     font-family: "Century Expanded", Georgia, serif;
-    font-size: 17px;
+    font-size: 22px;
     font-weight: 400;
-    color: #CCCCCC;
-    letter-spacing: -0.01em;
-    text-decoration: none;
-    transition: color 0.25s ease;
+    color: rgba(255, 255, 255, 0.35);
     white-space: nowrap;
+    padding: 0 44px;
+    cursor: default;
+    transition: color 0.2s ease;
 }
 
 .trust-logo:hover {
-    color: #888888;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.trust-sep {
+    color: rgba(255, 255, 255, 0.1);
+    font-size: 18px;
+    flex-shrink: 0;
+    line-height: 1;
+    padding: 0;
+}
+
+@keyframes trust-marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-33.333%); }
 }
 
 @media (max-width: 880px) {
-    .trust-logos { gap: 32px; }
-    .trust-logo  { font-size: 15px; }
+    .trust-label-col { display: none; }
+    .trust-inner { height: 72px; }
 }
 
 @media (max-width: 480px) {
-    .trust-logos { gap: 20px 28px; }
+    .trust-logo { font-size: 15px; padding: 0 24px; }
 }
 
 /* ============================================================
@@ -931,7 +1060,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 100px;
-    align-items: center;
+    align-items: start;
 }
 
 /* Flip visual to the left on reversed variant */
@@ -999,18 +1128,26 @@ body {
 .fc-steps { display: flex; flex-direction: column; }
 .fc-step {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 16px;
-    padding: 16px 0;
+    padding: 16px 12px;
+    margin: 0 -12px;
+    border-radius: 10px;
     border-bottom: 1px solid rgba(255,255,255,0.06);
+    cursor: pointer;
+    transition: background 0.2s ease;
 }
 .fc-step:last-child { border-bottom: none; }
+.fc-step:hover { background: rgba(255,255,255,0.04); }
+.fc-step.active { background: rgba(255,255,255,0.05); }
+
 .fc-step-num {
     font-family: "Century Expanded", Georgia, serif;
     font-size: 13px;
     color: rgba(255,255,255,0.2);
     width: 20px;
     flex-shrink: 0;
+    padding-top: 2px;
 }
 .fc-step.active .fc-step-num { color: #f96300; }
 .fc-step-content { flex: 1; }
@@ -1021,12 +1158,32 @@ body {
     font-weight: 500;
     color: rgba(255,255,255,0.5);
     margin-bottom: 3px;
+    transition: color 0.2s ease;
 }
 .fc-step.active .fc-step-content strong { color: #FFFFFF; }
-.fc-step-content span {
+.fc-step-content .fc-step-meta {
     font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
     font-size: 12px;
     color: rgba(255,255,255,0.25);
+}
+.fc-step-desc {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.45);
+    margin: 0;
+    padding-top: 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    /* Only transition max-height and opacity — no margin/padding transition
+       so collapse and expand heights cancel each other out frame-perfectly */
+    transition: max-height 0.32s ease, opacity 0.25s ease;
+}
+.fc-step.active .fc-step-desc {
+    padding-top: 8px;   /* padding is clipped by overflow:hidden when collapsed */
+    max-height: 90px;
+    opacity: 1;
 }
 .fc-step-badge {
     font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
@@ -1037,6 +1194,8 @@ body {
     padding: 4px 10px;
     border-radius: 4px;
     white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 2px;
 }
 
 /* Impact bars */
@@ -1524,4 +1683,360 @@ body {
 }
 @media (max-width: 480px) {
     .insights-grid { gap: 16px; }
+}
+
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+
+/* ── Page hero ── */
+.contact-hero {
+    padding-top: 160px;
+    padding-bottom: 64px;
+    background: #FFFFFF;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.contact-hero-inner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.contact-headline {
+    font-family: "Century Expanded", Georgia, serif;
+    font-size: 80px;
+    font-weight: 400;
+    color: #111111;
+    letter-spacing: -0.03em;
+    line-height: 1.0;
+    margin: 16px 0 20px 0;
+}
+
+.contact-subhead {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #555555;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 520px;
+}
+
+.contact-response-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #F5F5F5;
+    border: 1px solid #E8E8E8;
+    border-radius: 100px;
+    padding: 8px 16px;
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #333333;
+    white-space: nowrap;
+    flex-shrink: 0;
+    align-self: flex-end;
+    margin-bottom: 6px;
+}
+
+.contact-response-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+    animation: pulse-green 2s ease-in-out infinite;
+}
+
+@keyframes pulse-green {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2); }
+    50%       { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.08); }
+}
+
+/* ── Main grid ── */
+.contact-section {
+    background: #FFFFFF;
+    padding: 80px 0 96px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+/* ── Left: info panel ── */
+.contact-expect-heading {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #111111;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 32px 0;
+}
+
+.contact-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 48px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.contact-step {
+    display: flex;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid #EEEEEE;
+}
+.contact-step:first-child { border-top: 1px solid #EEEEEE; }
+
+.contact-step-num {
+    font-family: "Century Expanded", Georgia, serif;
+    font-size: 13px;
+    color: #f96300;
+    flex-shrink: 0;
+    padding-top: 2px;
+    width: 24px;
+}
+
+.contact-step strong {
+    display: block;
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 6px;
+}
+
+.contact-step p {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.contact-direct-heading {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #111111;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 0 16px 0;
+}
+
+.contact-direct {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.contact-direct-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #111111;
+    text-decoration: none;
+    padding: 12px 0;
+    border-bottom: 1px solid #EEEEEE;
+    transition: color 0.2s ease;
+}
+.contact-direct-link:last-child { border-bottom: none; }
+.contact-direct-link:hover { color: #f96300; }
+.contact-direct-link svg { flex-shrink: 0; opacity: 0.5; }
+
+/* ── Right: form ── */
+.contact-form-wrap {
+    background: #F8F7F5;
+    border: 1px solid #EEEEEE;
+    border-radius: 20px;
+    padding: 48px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.form-row--2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-field label {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #111111;
+    letter-spacing: 0.02em;
+}
+
+.form-required {
+    color: #f96300;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #111111;
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 10px;
+    padding: 12px 16px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.form-field select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+.form-field textarea {
+    resize: vertical;
+    min-height: 130px;
+    line-height: 1.6;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: #AAAAAA;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: #f96300;
+    box-shadow: 0 0 0 3px rgba(249, 99, 0, 0.08);
+}
+
+.form-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #FFFFFF;
+    background: #111111;
+    border: none;
+    border-radius: 100px;
+    padding: 16px 32px;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    transition: background 0.2s ease;
+    align-self: flex-start;
+}
+.form-submit:hover { background: #f96300; }
+
+.form-privacy {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    color: #AAAAAA;
+    margin: 0;
+    line-height: 1.6;
+}
+.form-privacy a {
+    color: #888888;
+    text-decoration: underline;
+}
+.form-privacy a:hover { color: #111111; }
+
+/* ── Reassurance strip ── */
+.contact-reassure {
+    background: #F5F5F5;
+    border-top: 1px solid #EEEEEE;
+    padding: 64px 0;
+}
+
+.contact-reassure-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.contact-reassure-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-reassure-icon {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    border: 1px solid #E8E8E8;
+    align-items: center;
+    justify-content: center;
+    color: #f96300;
+    flex-shrink: 0;
+    margin-bottom: 4px;
+}
+
+.contact-reassure-item strong {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #111111;
+}
+
+.contact-reassure-item p {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .contact-grid { grid-template-columns: 340px 1fr; gap: 56px; }
+    .contact-headline { font-size: 64px; }
+}
+
+@media (max-width: 880px) {
+    .contact-hero { padding-top: 120px; padding-bottom: 48px; }
+    .contact-hero-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
+    .contact-headline { font-size: 52px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .contact-reassure-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .contact-form-wrap { padding: 32px; }
+}
+
+@media (max-width: 600px) {
+    .contact-headline { font-size: 42px; }
+    .form-row--2 { grid-template-columns: 1fr; }
+    .contact-reassure-grid { grid-template-columns: 1fr; gap: 24px; }
+    .contact-form-wrap { padding: 24px; }
 }
