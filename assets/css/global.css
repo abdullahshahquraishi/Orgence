@@ -1,5 +1,5 @@
 /* ============================================================
-   Orgence AI — Global Stylesheet
+   Orgence AI — Global Stylesheet (v2 skeleton)
    Shared across all pages.
    Note: Tailwind @layer / @apply directives must live in
    <style type="text/tailwindcss"> blocks inside each HTML page.
@@ -20,9 +20,6 @@
         padding-bottom: 8rem;
     }
 }
-.magazine-shadow {
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
-}
 
 /* ── Browser defaults ─────────────────────────────────────── */
 html { scroll-behavior: smooth; }
@@ -42,67 +39,6 @@ html { scroll-behavior: smooth; }
     transition: width 0.08s linear;
 }
 
-/* ── Page-load animation ───────────────────────────────────── */
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-24px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-/* ── Floating nav pill ─────────────────────────────────────── */
-#nav-pill {
-    position: fixed;
-    top: 1.25rem;
-    left: 1.25rem;
-    z-index: 80;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: rgba(242, 239, 237, 0.92);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(27, 48, 34, 0.08);
-    border-radius: 100px;
-    padding: 0.5rem 1.125rem 0.5rem 0.75rem;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
-    animation: slideDown 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-#nav-pill-brand {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-}
-.nav-pill-icon {
-    font-size: 1.1rem !important;
-    color: #1B3022;
-}
-.nav-pill-wordmark {
-    font-family: "Libre Baskerville", serif;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: #1B3022;
-    white-space: nowrap;
-    line-height: 1;
-}
-
-/* ── Hero animations ──────────────────────────────────────── */
-.hero-label {
-    opacity: 0;
-    animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
-}
-.hero-line {
-    opacity: 0;
-    transform: translateY(36px);
-    animation: heroReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.hero-line:nth-child(1) { animation-delay: 0.35s; }
-.hero-line:nth-child(2) { animation-delay: 0.55s; }
-.hero-line:nth-child(3) { animation-delay: 0.75s; }
-@keyframes heroReveal {
-    to { opacity: 1; transform: translateY(0); }
-}
-
 /* ── Scroll-triggered reveal ──────────────────────────────── */
 [data-reveal] {
     opacity: 0;
@@ -119,106 +55,15 @@ html { scroll-behavior: smooth; }
 [data-delay="3"] { transition-delay: 0.34s; }
 [data-delay="4"] { transition-delay: 0.46s; }
 
-/* ── Card lift on hover ───────────────────────────────────── */
-.card-lift:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08) !important;
+/* ── Page-load animations ─────────────────────────────────── */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-24px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
-
-/* ── Nav underline slide ──────────────────────────────────── */
-.nav-link { position: relative; }
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -3px; left: 0;
-    width: 0; height: 1px;
-    background: #1B3022;
-    transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+@keyframes heroReveal {
+    to { opacity: 1; transform: translateY(0); }
 }
-.nav-link:hover::after        { width: 100%; }
-.nav-link.active::after       { width: 100%; background: #8D493A; }
-.nav-link.active              { color: #1B3022; }
-
-/* ── Diagnostic roman numerals ────────────────────────────── */
-.diag-num {
-    display: inline-block;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s ease;
-}
-.group:hover .diag-num { transform: scale(1.2) translateX(4px); }
-
-/* ── Target profile numbers ───────────────────────────────── */
-.target-num {
-    display: inline-block;
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
-}
-.group:hover .target-num {
-    transform: scale(1.35) translateY(-3px);
-    opacity: 1;
-}
-
-/* ── Banner fade-in ───────────────────────────────────────── */
 @keyframes fadeInUp {
     from { opacity: 0; transform: translateY(12px); }
     to   { opacity: 1; transform: translateY(0); }
-}
-.banner-animate {
-    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 1.2s both;
-}
-
-/* ── Footer links ─────────────────────────────────────────── */
-.footer-link {
-    display: block;
-    font-size: 0.875rem;
-    font-weight: 300;
-    color: rgba(250, 249, 246, 0.50);
-    transition: color 0.25s ease, padding-left 0.25s ease;
-}
-.footer-link:hover {
-    color: rgba(250, 249, 246, 0.90);
-    padding-left: 4px;
-}
-
-/* ── Hamburger button ─────────────────────────────────────── */
-.hamburger-bar {
-    display: block;
-    width: 22px;
-    height: 1.5px;
-    background-color: #1B3022;
-    border-radius: 1px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* ── Mobile navigation overlay ───────────────────────────── */
-#mobile-nav {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-    background-color: #1B3022;
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-#mobile-nav.open {
-    opacity: 1;
-    pointer-events: auto;
-}
-/* ── Mobile nav links ─────────────────────────────────────── */
-.mobile-nav-link {
-    display: block;
-    padding: 1.25rem 0;
-    border-bottom: 1px solid rgba(250, 249, 246, 0.08);
-    font-family: "Libre Baskerville", serif;
-    font-size: 1.75rem;
-    font-style: italic;
-    color: rgba(250, 249, 246, 0.60);
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
-    transition: color 0.2s ease, padding-left 0.2s ease;
-}
-.mobile-nav-link:hover,
-.mobile-nav-link:active {
-    color: rgba(250, 249, 246, 1);
-    padding-left: 0.5rem;
 }
