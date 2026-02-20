@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Orgence AI</title>
+    <meta name="description" content="Start a conversation with Orgence. Tell us about your business challenge and we'll come back with a clear plan." />
+
+    <!-- Tailwind CSS (Play CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/config.js"></script>
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="assets/css/global.css" />
+
+    <style type="text/tailwindcss">
+        /* Page-specific Tailwind overrides go here */
+    </style>
+</head>
+<body>
+
+    <!-- Header injected by components.js -->
+    <header id="site-header"></header>
+
+    <main>
+
+        <!-- ── Page header ───────────────────────────────────── -->
+        <section class="contact-hero">
+            <div class="narrative-container">
+                <div class="contact-hero-inner">
+                    <div class="contact-hero-text" data-reveal>
+                        <span class="section-eyebrow">Get in touch</span>
+                        <h1 class="contact-headline">Let's talk.</h1>
+                        <p class="contact-subhead">Tell us about your challenge. We'll come back with a clear plan — no pitch deck, no drawn-out sales process.</p>
+                    </div>
+                    <div class="contact-hero-meta" data-reveal data-delay="1">
+                        <div class="contact-response-badge">
+                            <span class="contact-response-dot"></span>
+                            <span>We respond within one business day</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Contact body ───────────────────────────────────── -->
+        <section class="contact-section">
+            <div class="narrative-container">
+                <div class="contact-grid">
+
+                    <!-- ── Left: info panel ── -->
+                    <div class="contact-info" data-reveal>
+
+                        <div class="contact-expect">
+                            <h2 class="contact-expect-heading">What happens next</h2>
+                            <ol class="contact-steps">
+                                <li class="contact-step">
+                                    <span class="contact-step-num">01</span>
+                                    <div>
+                                        <strong>Discovery call</strong>
+                                        <p>A focused 30-minute conversation to understand your goals, constraints, and where AI can create the most value.</p>
+                                    </div>
+                                </li>
+                                <li class="contact-step">
+                                    <span class="contact-step-num">02</span>
+                                    <div>
+                                        <strong>Scoped proposal</strong>
+                                        <p>Within a week we'll send a clear proposal — deliverables, timeline, and investment. No vague estimates.</p>
+                                    </div>
+                                </li>
+                                <li class="contact-step">
+                                    <span class="contact-step-num">03</span>
+                                    <div>
+                                        <strong>We get to work</strong>
+                                        <p>Once aligned, our team embeds with yours. Most engagements move from discovery to live deployment in 12 weeks.</p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="contact-direct">
+                            <h3 class="contact-direct-heading">Prefer direct contact?</h3>
+                            <a href="mailto:hello@orgence.ai" class="contact-direct-link">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                                hello@orgence.ai
+                            </a>
+                            <a href="#" class="contact-direct-link">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452H17.21v-5.569c0-1.328-.025-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.984V9.187h3.102v1.481h.044c.432-.818 1.487-1.681 3.061-1.681 3.272 0 3.876 2.154 3.876 4.956v6.509zM5.337 7.433a1.8 1.8 0 1 1 0-3.601 1.8 1.8 0 0 1 0 3.601zM6.959 20.452H3.714V9.187h3.245v11.265zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                Orgence AI on LinkedIn
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- ── Right: form ── -->
+                    <div class="contact-form-wrap" data-reveal data-delay="1">
+                        <form class="contact-form" action="#" method="POST" novalidate>
+
+                            <div class="form-row form-row--2">
+                                <div class="form-field">
+                                    <label for="cf-name">Full name <span class="form-required">*</span></label>
+                                    <input type="text" id="cf-name" name="name" placeholder="Jane Smith" autocomplete="name" required />
+                                </div>
+                                <div class="form-field">
+                                    <label for="cf-company">Company</label>
+                                    <input type="text" id="cf-company" name="company" placeholder="Acme Corp" autocomplete="organization" />
+                                </div>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="cf-email">Work email <span class="form-required">*</span></label>
+                                <input type="email" id="cf-email" name="email" placeholder="jane@company.com" autocomplete="email" required />
+                            </div>
+
+                            <div class="form-field">
+                                <label for="cf-service">What are you looking for?</label>
+                                <select id="cf-service" name="service">
+                                    <option value="" disabled selected>Select a service</option>
+                                    <option value="strategy">AI Strategy &amp; Roadmap</option>
+                                    <option value="implementation">Implementation &amp; Engineering</option>
+                                    <option value="training">Training &amp; Enablement</option>
+                                    <option value="audit">Audit &amp; Advisory</option>
+                                    <option value="unsure">Not sure yet</option>
+                                </select>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="cf-budget">Approximate budget</label>
+                                <select id="cf-budget" name="budget">
+                                    <option value="" disabled selected>Select a range</option>
+                                    <option value="under50">Under £50,000</option>
+                                    <option value="50-150">£50,000 – £150,000</option>
+                                    <option value="150-500">£150,000 – £500,000</option>
+                                    <option value="over500">£500,000+</option>
+                                    <option value="unsure">Not sure</option>
+                                </select>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="cf-message">Describe your challenge <span class="form-required">*</span></label>
+                                <textarea id="cf-message" name="message" rows="5" placeholder="Tell us about your current situation, the problem you're trying to solve, and any relevant context — the more specific, the better." required></textarea>
+                            </div>
+
+                            <button type="submit" class="form-submit">
+                                Send message &nbsp;&rarr;
+                            </button>
+
+                            <p class="form-privacy">We'll never share your information. By submitting you agree to our <a href="#">Privacy Policy</a>.</p>
+
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Reassurance strip ──────────────────────────────── -->
+        <section class="contact-reassure">
+            <div class="narrative-container">
+                <div class="contact-reassure-grid">
+                    <div class="contact-reassure-item" data-reveal>
+                        <span class="contact-reassure-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </span>
+                        <strong>No commitment required</strong>
+                        <p>The initial call is free. You'll receive a clear proposal before any engagement begins.</p>
+                    </div>
+                    <div class="contact-reassure-item" data-reveal data-delay="1">
+                        <span class="contact-reassure-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </span>
+                        <strong>Fast response</strong>
+                        <p>Every enquiry is reviewed personally. You'll hear from us within one business day.</p>
+                    </div>
+                    <div class="contact-reassure-item" data-reveal data-delay="2">
+                        <span class="contact-reassure-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        </span>
+                        <strong>Senior team from day one</strong>
+                        <p>You'll work with our principals, not junior consultants. No bait-and-switch.</p>
+                    </div>
+                    <div class="contact-reassure-item" data-reveal data-delay="3">
+                        <span class="contact-reassure-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </span>
+                        <strong>Fixed-scope pricing</strong>
+                        <p>Every proposal is fixed-price, scoped clearly. No day rates, no billable-hour surprises.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer injected by components.js -->
+    <footer id="site-footer"></footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/global.js"></script>
+    <script>
+        document.getElementById('site-header').outerHTML = OrgenceComponents.header('contact');
+        document.getElementById('site-footer').outerHTML = OrgenceComponents.footer();
+    </script>
+
+</body>
+</html>

@@ -90,4 +90,70 @@
         });
     }
 
+    /* ── Process steps (interactive + auto-cycle) ─────────── */
+    const fcSteps = document.querySelectorAll('.fc-steps .fc-step');
+    if (fcSteps.length) {
+        let current   = 0;
+        let autoTimer = null;
+
+        function activateStep(idx) {
+            current = idx;
+            fcSteps.forEach((step, i) => {
+                const on = (i === idx);
+                step.classList.toggle('active', on);
+                let badge = step.querySelector('.fc-step-badge');
+                if (on && !badge) {
+                    badge = document.createElement('span');
+                    badge.className = 'fc-step-badge';
+                    badge.textContent = 'Active';
+                    step.appendChild(badge);
+                } else if (!on && badge) {
+                    badge.remove();
+                }
+            });
+        }
+
+        function startAuto() {
+            clearInterval(autoTimer);
+            autoTimer = setInterval(() => {
+                activateStep((current + 1) % fcSteps.length);
+            }, 3200);
+        }
+
+        function stopAuto() {
+            clearInterval(autoTimer);
+            autoTimer = null;
+        }
+
+        fcSteps.forEach((step, idx) => {
+            step.addEventListener('click', () => {
+                stopAuto();
+                activateStep(idx);
+                // Resume auto after 7s of no interaction
+                autoTimer = setTimeout(startAuto, 7000);
+            });
+        });
+
+        // Pause while hovering the panel
+        const stepsWrap = fcSteps[0].closest('.fc-steps');
+        if (stepsWrap) {
+            stepsWrap.addEventListener('mouseenter', stopAuto);
+            stepsWrap.addEventListener('mouseleave', startAuto);
+        }
+
+        // Lock card height after the first paint so no description transition
+        // ever causes the surrounding layout to reflow.
+        // Step 01 is already .active in HTML, so the description is fully
+        // rendered before this callback fires — we capture the correct height.
+        const fcCard = fcSteps[0].closest('.feature-card');
+        if (fcCard) {
+            requestAnimationFrame(() => requestAnimationFrame(() => {
+                fcCard.style.height   = fcCard.offsetHeight + 'px';
+                fcCard.style.overflow = 'hidden';
+            }));
+        }
+
+        startAuto();
+    }
+
 })();
