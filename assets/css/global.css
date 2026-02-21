@@ -2040,3 +2040,535 @@ body {
     .contact-reassure-grid { grid-template-columns: 1fr; gap: 24px; }
     .contact-form-wrap { padding: 24px; }
 }
+
+/* ============================================================
+   SHARED BLOG TAG
+   ============================================================ */
+.blog-tag {
+    display: inline-block;
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #f96300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* ============================================================
+   BLOG LISTING PAGE
+   ============================================================ */
+
+/* ── Page hero ── */
+.blog-hero {
+    padding-top: 160px;
+    padding-bottom: 56px;
+    background: #FFFFFF;
+}
+.blog-hero-inner {
+    max-width: 700px;
+}
+.blog-hero-headline {
+    font-family: "Century Expanded", Georgia, serif;
+    font-size: 56px;
+    font-weight: 400;
+    color: #111111;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 14px 0 20px 0;
+}
+.blog-hero-sub {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #555555;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* ── Filter bar ── */
+.blog-filter-bar {
+    background: #FFFFFF;
+    border-bottom: 1px solid #EEEEEE;
+    position: sticky;
+    top: 88px;  /* sits just below the floating nav */
+    z-index: 50;
+}
+.blog-filter {
+    display: flex;
+    gap: 0;
+    padding: 0;
+}
+.blog-filter-btn {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #888888;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 14px 20px;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    white-space: nowrap;
+}
+.blog-filter-btn:hover { color: #111111; }
+.blog-filter-btn.active {
+    color: #111111;
+    border-bottom-color: #111111;
+}
+
+/* ── Main listing area ── */
+.blog-section {
+    background: #FFFFFF;
+    padding: 64px 0 96px;
+}
+
+/* Featured article */
+.blog-featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+    margin-bottom: 72px;
+    padding-bottom: 72px;
+    border-bottom: 1px solid #EEEEEE;
+    text-decoration: none;
+    color: inherit;
+}
+.blog-featured:hover .bf-title { color: #f96300; }
+.bf-image {
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+}
+.bf-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+}
+.bf-image-label {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+.bf-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.bf-title {
+    font-family: "Century Expanded", Georgia, serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #111111;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 12px 0 16px 0;
+    transition: color 0.2s ease;
+}
+.bf-excerpt {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    color: #555555;
+    line-height: 1.65;
+    margin: 0 0 20px 0;
+}
+.bf-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    color: #888888;
+    margin-bottom: 20px;
+}
+.bf-meta-dot { color: #CCCCCC; }
+.bf-read-link {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #f96300;
+    text-decoration: none;
+}
+
+/* Article grid */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 32px;
+}
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #EEEEEE;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.blog-card:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    transform: translateY(-3px);
+}
+.blog-card:hover .bc-title { color: #f96300; }
+.bc-image {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+.bc-image-placeholder {
+    width: 100%;
+    height: 100%;
+}
+.bc-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 0;
+}
+.bc-title {
+    font-family: "Century Expanded", Georgia, serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #111111;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    margin: 10px 0 12px 0;
+    transition: color 0.2s ease;
+}
+.bc-excerpt {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.65;
+    margin: 0 0 16px 0;
+    flex: 1;
+}
+.bc-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    color: #999999;
+    margin-top: auto;
+}
+.bc-meta-dot { color: #DDDDDD; }
+
+/* ── Responsive: listing ── */
+@media (max-width: 1024px) {
+    .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    .bf-title { font-size: 30px; }
+}
+@media (max-width: 880px) {
+    .blog-hero { padding-top: 120px; }
+    .blog-hero-headline { font-size: 42px; }
+    .blog-featured { grid-template-columns: 1fr; gap: 32px; }
+    .bf-title { font-size: 28px; }
+    .blog-filter-bar { top: 78px; }
+}
+@media (max-width: 600px) {
+    .blog-grid { grid-template-columns: 1fr; }
+    .blog-hero-headline { font-size: 34px; }
+}
+
+/* ============================================================
+   BLOG POST / ARTICLE PAGE
+   ============================================================ */
+
+/* Narrow reading container */
+.article-container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.article-main {
+    background: #FFFFFF;
+}
+
+/* ── Article header ── */
+.article-header {
+    padding-top: 140px;
+    padding-bottom: 0;
+    background: #FFFFFF;
+}
+
+.article-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #888888;
+    text-decoration: none;
+    margin-bottom: 32px;
+    transition: color 0.2s ease;
+}
+.article-back:hover { color: #111111; }
+.article-back svg { flex-shrink: 0; }
+
+.article-headline {
+    font-family: "Century Expanded", Georgia, serif;
+    font-size: 52px;
+    font-weight: 400;
+    color: #111111;
+    letter-spacing: -0.025em;
+    line-height: 1.12;
+    margin: 0 0 32px 0;
+}
+
+.article-meta-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.article-author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #111111;
+    color: #FFFFFF;
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.article-author-name {
+    display: block;
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111111;
+}
+.article-meta-detail {
+    display: block;
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 13px;
+    color: #888888;
+    margin-top: 2px;
+}
+
+/* Share buttons */
+.article-share {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.share-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #111111;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    flex-shrink: 0;
+}
+.share-btn:hover { background: #f96300; }
+
+/* Hero image */
+.article-hero-img {
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 56px;
+    aspect-ratio: 16/8;
+}
+.article-hero-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+}
+.article-hero-placeholder span {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* ── Article body prose ── */
+.article-body-wrap {
+    padding-bottom: 80px;
+}
+
+.article-body {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: #2d2d2d;
+    line-height: 1.75;
+}
+
+.article-lede {
+    font-size: 20px;
+    font-weight: 400;
+    color: #111111;
+    line-height: 1.6;
+    margin: 0 0 36px 0;
+    padding-bottom: 36px;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.article-body p {
+    margin: 0 0 24px 0;
+}
+.article-body p:last-child { margin-bottom: 0; }
+
+.article-body h2 {
+    font-family: "Century Expanded", Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #111111;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 56px 0 20px 0;
+}
+
+.article-body a {
+    color: #f96300;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.article-body a:hover { opacity: 0.75; }
+
+.article-body ul,
+.article-body ol {
+    padding-left: 0;
+    margin: 0 0 24px 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.article-body ul li,
+.article-body ol li {
+    padding-left: 24px;
+    position: relative;
+    line-height: 1.7;
+}
+.article-body ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #f96300;
+    font-weight: 400;
+}
+.article-body ol { counter-reset: ol-counter; }
+.article-body ol li { counter-increment: ol-counter; }
+.article-body ol li::before {
+    content: counter(ol-counter) '.';
+    position: absolute;
+    left: 0;
+    color: #f96300;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.article-body strong {
+    font-weight: 600;
+    color: #111111;
+}
+
+.article-body em {
+    font-style: italic;
+    color: #444444;
+}
+
+/* Blockquote */
+.article-blockquote {
+    margin: 40px 0;
+    padding: 28px 32px;
+    border-left: 3px solid #f96300;
+    background: #FFF8F5;
+    border-radius: 0 12px 12px 0;
+    font-family: "Century Expanded", Georgia, serif;
+    font-size: 20px;
+    font-style: italic;
+    color: #333333;
+    line-height: 1.55;
+}
+
+/* ── Next post nav ── */
+.article-nav-row {
+    padding: 64px 0;
+    border-top: 1px solid #EEEEEE;
+    text-align: center;
+}
+.article-next-link {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #f96300;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+.article-next-link:hover { opacity: 0.7; }
+
+/* ── Related articles ── */
+.article-related {
+    background: #F8F7F5;
+    border-top: 1px solid #EEEEEE;
+    padding: 72px 0;
+}
+.article-related-label {
+    font-family: "Zalando Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #AAAAAA;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.article-related-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+.article-related-grid .blog-card {
+    background: #FFFFFF;
+}
+
+/* ── Responsive: article ── */
+@media (max-width: 880px) {
+    .article-container { padding: 0 24px; }
+    .article-header { padding-top: 110px; }
+    .article-headline { font-size: 40px; }
+    .article-meta-row { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .article-related-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+    .article-headline { font-size: 32px; }
+    .article-body { font-size: 16px; }
+    .article-body h2 { font-size: 26px; }
+    .article-lede { font-size: 18px; }
+    .article-blockquote { font-size: 18px; padding: 20px 20px; }
+    .article-related-grid { grid-template-columns: 1fr; }
+}
