@@ -82,10 +82,10 @@ const OrgenceComponents = (() => {
 
             <nav class="footer-nav">
                 <a href="#services">Services</a>
-                <a href="#work">Work</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-                <a href="#">Blog</a>
+                <a href="/#work">Work</a>
+                <a href="/#about">About</a>
+                <a href="/contact.html">Contact</a>
+                <a href="/blog.html">Blog</a>
             </nav>
 
             <div class="footer-assist">
